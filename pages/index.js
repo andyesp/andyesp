@@ -9,12 +9,11 @@ const Home = () => {
       </Head>
 
       <header>
-        <h1 className="title">Andy</h1>
-        <h1 className="title">Espagnolo</h1>
+        <div id="text">
+          <h1 className="title">Andy</h1>
+          <h1 className="title">Espagnolo</h1>
+        </div>
       </header>
-      <main>
-        <img src="/images/japan-01.jpeg" />
-      </main>
 
       <style jsx>{`
         .container {
@@ -27,6 +26,11 @@ const Home = () => {
 
         header {
           padding: 2rem;
+        }
+
+        #text {
+          width: 100px;
+          transform: translateY(50px) rotate(90deg);
         }
 
         main {
