@@ -57,6 +57,12 @@ const Home = () => {
         </div>
       </main>
 
+      <footer>
+        <a href="mailto:andyespagnolo@gmail.com">
+          <p>andyespagnolo@gmail.com</p>
+        </a>
+      </footer>
+
       <style jsx>{`
         .container {
           min-height: 100vh;
@@ -123,6 +129,18 @@ const Home = () => {
 
         .title:first-child {
           padding-left: 0.11rem;
+        }
+
+        footer {
+          margin-bottom: 2rem;
+        }
+
+        footer p {
+          font-family: Futura;
+        }
+
+        footer a {
+          text-decoration: none;
         }
       `}</style>
 
