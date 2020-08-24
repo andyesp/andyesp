@@ -17,14 +17,44 @@ const Home = () => {
       </header>
 
       <main>
-        <Link href="/code">
-          <a>
-            <h3>code / design</h3>
+        <div className="item">
+          <h3>DJMAG Latam</h3>
+          <p>
+            Design and development of website for one of the most important
+            electronic brands.
+          </p>
+          <p>NextJS, Wordpress.</p>
+          <p>Release in September 2020.</p>
+        </div>
+        <div className="item">
+          <h3>XDK2MAM Dashboard</h3>
+          <p>
+            Design and development of visualization tool for the XDK110 sensor.
+          </p>
+          <p>React.</p>
+          <a
+            href="https://github.com/xdk2mam/xdk2mam-dashboard"
+            target="_blank"
+          >
+            <p>https://github.com/xdk2mam/xdk2mam-dashboard</p>
           </a>
-        </Link>
-        <a href="https://andyesp.bandcamp.com">
-          <h3>music</h3>
-        </a>
+        </div>
+        <div className="item">
+          <h3>Dalinha</h3>
+          <p>Development for visual artist website.</p>
+          <p>Wordpress.</p>
+          <a href="https://gustavodalinha.com" target="_blank">
+            <p>https://gustavodalinha.com</p>
+          </a>
+        </div>
+        <div className="item">
+          <h3>Jose Luis Diaz Ramirez</h3>
+          <p>Design and development for visual artist website.</p>
+          <p>HTML, CSS, Javascript, PHP (Wordpress).</p>
+          <a href="http://josediazramirez.com/" target="_blank">
+            <p>http://josediazramirez.com/</p>
+          </a>
+        </div>
       </main>
 
       <style jsx>{`
@@ -54,7 +84,17 @@ const Home = () => {
         main h3 {
           margin: 0;
           color: #b9c8da;
-          text-decoration: underline;
+        }
+
+        .item {
+          max-width: 500px;
+          margin-bottom: 2.5rem;
+          padding-bottom: 2rem;
+          border-bottom: 1px solid #b9c8da;
+        }
+
+        .item:last-child {
+          border-bottom: none;
         }
 
         .title {
@@ -66,9 +106,13 @@ const Home = () => {
         }
 
         p {
-          margin-top: 2rem;
           margin-left: 2rem;
-          font-family: Futura;
+          margin-bottom: 0;
+          font-family: Helvetica;
+          color: #b9c8da;
+        }
+
+        a {
           color: #b9c8da;
         }
 
