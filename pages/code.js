@@ -66,46 +66,36 @@ const Projects = [
 const Code = () => {
   return (
     <Layout>
-      <div className="container">
+      <div className="flex flex-col">
         {Projects.map((item) => (
-          <div className="item">
-            <h3>
+          <div className="item mb-8 pb-8">
+            <h3 className="font-bold text-lg mb-4">
               {item.title} ({item.year})
             </h3>
-            <p>{item.description}</p>
-            <p>{item.tech}</p>
-            {!isEmpty(item.url) && (
-              <a href={item.url} target="_blank">
-                <p>{item.url}</p>
-              </a>
-            )}
-            {!isEmpty(item.releaseDate) && <p>{item.releaseDate}</p>}
+            <div className="md:ml-4 mb-2">
+              <p className="mb-2">{item.description}</p>
+              <p className="mb-2">{item.tech}</p>
+              {!isEmpty(item.url) && (
+                <a href={item.url} target="_blank">
+                  <p className="mb-2 break-words underline">{item.url}</p>
+                </a>
+              )}
+              {!isEmpty(item.releaseDate) && <p className="mb-2">{item.releaseDate}</p>}
+            </div>
           </div>
         ))}
 
         <style jsx>{`
-          .container {
-            padding: 0 0.5rem;
-            display: flex;
-            flex-direction: column;
-          }
-
           .item {
             max-width: 500px;
-            margin-bottom: 2.5rem;
-            padding-bottom: 2rem;
             border-bottom: 1px solid #b9c8da;
           }
 
           h3 {
-            margin: 0;
             color: #b9c8da;
           }
 
           p {
-            margin-top: 2rem;
-            margin-left: 2rem;
-            font-family: Helvetica;
             color: #b9c8da;
           }
 

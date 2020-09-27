@@ -3,25 +3,25 @@ import Head from 'next/head'
 
 const Layout = ({ children }) => {
   return (
-    <div className="container">
+    <div className="container flex flex-col">
       <Head>
         <title>Andy Espagnolo</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header>
+      <header className="p-8">
         <Link href="/">
-          <div className="logo">
-            <h1 className="title">Andy</h1>
-            <h1 className="title">Espagnolo</h1>
+          <div className="logo cursor-pointer">
+            <h1 className="title font-bold">Andy</h1>
+            <h1 className="title font-bold">Espagnolo</h1>
           </div>
         </Link>
       </header>
 
-      <div className="body">
-        <nav>
+      <div className="body flex flex-1 flex-col md:flex-row">
+        <nav className="flex flex-row md:flex-col py-4 px-8 md:py-8">
           <Link href="/code">
-            <a>
+            <a className="mr-4">
               <h3>code / design</h3>
             </a>
           </Link>
@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
           </a>
         </nav>
 
-        <main>{children}</main>
+        <main className="p-8">{children}</main>
       </div>
 
       <footer>
@@ -42,31 +42,11 @@ const Layout = ({ children }) => {
       <style jsx>{`
         .container {
           min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
           background-color: #2e1f47;
-        }
-
-        .body {
-          display: flex;
-          flex: 1;
-          flex-direction: row;
-        }
-
-        header {
-          padding: 2rem;
         }
 
         .logo {
           width: 225px;
-          cursor: pointer;
-        }
-
-        nav {
-          display: flex;
-          flex-direction: column;
-          padding: 2rem;
         }
 
         nav h3 {
@@ -75,13 +55,9 @@ const Layout = ({ children }) => {
           text-decoration: underline;
         }
 
-        main {
-          padding: 2rem;
-        }
-
         .title {
           margin: 0;
-          font-family: Helvetica;
+          font-family: Helvetica !important;
           font-size: 2rem;
           line-height: 0.9;
           color: #b9c8da;
@@ -90,13 +66,8 @@ const Layout = ({ children }) => {
         p {
           margin-top: 2rem;
           margin-left: 2rem;
-          font-family: Helvetica;
+          font-family: Helvetica !important;
           color: #b9c8da;
-        }
-
-        img {
-          width: 50%;
-          object-fit: contain;
         }
 
         .title:first-child {
