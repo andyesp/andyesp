@@ -109,6 +109,7 @@ const Layout = ({ children }) => {
 
         footer p {
           font-family: Helvetica;
+          font-weight: 700;
         }
 
         footer a {
