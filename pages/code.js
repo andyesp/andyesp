@@ -88,7 +88,7 @@ const Code = () => {
         <style jsx>{`
           .item {
             max-width: 500px;
-            border-bottom: 1px solid #b9c8da;
+            // border-bottom: 1px solid #b9c8da;
           }
 
           h3 {
