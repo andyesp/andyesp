@@ -71,7 +71,7 @@ const Code = () => {
       {Projects.map((item, index) => (
         <motion.div
           key={item.id}
-          className="item mb-8 pb-8"
+          className="item mb-4 md:mb-8 pb-4"
           initial="hidden"
           animate="visible"
           variants={{
@@ -88,18 +88,20 @@ const Code = () => {
             },
           }}
         >
-          <h3 className="font-bold text-lg mb-4">
-            {item.title} ({item.year})
-          </h3>
-          <div className="md:ml-4 mb-2">
-            <p className="mb-2">{item.description}</p>
-            <p className="mb-2">{item.tech}</p>
-            {!isEmpty(item.url) && (
-              <a href={item.url} target="_blank">
-                <p className="mb-2 break-words underline">{item.url}</p>
-              </a>
-            )}
-            {!isEmpty(item.releaseDate) && <p className="mb-2">{item.releaseDate}</p>}
+          <div className="item">
+            <h3 className="font-bold text-lg mb-3">
+              {item.title} ({item.year})
+            </h3>
+            <div className="md:ml-4 mb-2">
+              <p className="mb-2">{item.description}</p>
+              <p className="mb-2">{item.tech}</p>
+              {!isEmpty(item.url) && (
+                <a href={item.url} target="_blank">
+                  <p className="mb-2 break-words underline">{item.url}</p>
+                </a>
+              )}
+              {!isEmpty(item.releaseDate) && <p className="mb-2">{item.releaseDate}</p>}
+            </div>
           </div>
         </motion.div>
       ))}
