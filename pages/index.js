@@ -1,10 +1,12 @@
 import Link from 'next/link'
-import Head from 'next/head'
-import Layout from '~/components/Layout'
+
+/**
+ * Home
+ */
 
 const Home = () => {
   return (
-    <Layout>
+    <>
       <p>
         I'm a{' '}
         <Link href="/code">
@@ -26,8 +28,12 @@ const Home = () => {
           }
         `}
       </style>
-    </Layout>
+    </>
   )
 }
+
+/**
+ * Exports
+ */
 
 export default Home

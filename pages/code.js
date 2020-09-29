@@ -1,5 +1,7 @@
 import Head from 'next/head'
-import { isEmpty } from 'lodash'
+import { isEmpty, toNumber } from 'lodash'
+import { motion } from 'framer-motion'
+
 import Layout from '~/components/Layout'
 
 /**
@@ -65,46 +67,66 @@ const Projects = [
 
 const Code = () => {
   return (
-    <Layout>
-      <div className="flex flex-col">
-        {Projects.map((item) => (
-          <div className="item mb-8 pb-8">
-            <h3 className="font-bold text-lg mb-4">
-              {item.title} ({item.year})
-            </h3>
-            <div className="md:ml-4 mb-2">
-              <p className="mb-2">{item.description}</p>
-              <p className="mb-2">{item.tech}</p>
-              {!isEmpty(item.url) && (
-                <a href={item.url} target="_blank">
-                  <p className="mb-2 break-words underline">{item.url}</p>
-                </a>
-              )}
-              {!isEmpty(item.releaseDate) && <p className="mb-2">{item.releaseDate}</p>}
-            </div>
+    <div className="flex flex-col">
+      {Projects.map((item, index) => (
+        <motion.div
+          key={item.id}
+          className="item mb-8 pb-8"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: '10%',
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: toNumber(`0.${index}`),
+              },
+            },
+          }}
+        >
+          <h3 className="font-bold text-lg mb-4">
+            {item.title} ({item.year})
+          </h3>
+          <div className="md:ml-4 mb-2">
+            <p className="mb-2">{item.description}</p>
+            <p className="mb-2">{item.tech}</p>
+            {!isEmpty(item.url) && (
+              <a href={item.url} target="_blank">
+                <p className="mb-2 break-words underline">{item.url}</p>
+              </a>
+            )}
+            {!isEmpty(item.releaseDate) && <p className="mb-2">{item.releaseDate}</p>}
           </div>
-        ))}
+        </motion.div>
+      ))}
 
-        <style jsx>{`
-          .item {
-            max-width: 500px;
-            // border-bottom: 1px solid #b9c8da;
-          }
+      <style jsx>{`
+        .container {
+          opacity: 0;
+        }
 
-          h3 {
-            color: #b9c8da;
-          }
+        .item {
+          max-width: 500px;
+          // border-bottom: 1px solid #b9c8da;
+        }
 
-          p {
-            color: #b9c8da;
-          }
+        h3 {
+          color: #b9c8da;
+        }
 
-          a {
-            color: #b9c8da;
-          }
-        `}</style>
-      </div>
-    </Layout>
+        p {
+          color: #b9c8da;
+        }
+
+        a {
+          color: #b9c8da;
+        }
+      `}</style>
+    </div>
   )
 }
 

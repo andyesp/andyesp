@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { motion } from 'framer-motion'
 
 const Layout = ({ children }) => {
+  const router = useRouter()
+
   return (
     <div className="container flex flex-col">
       <Head>
@@ -30,7 +34,22 @@ const Layout = ({ children }) => {
           </a>
         </nav>
 
-        <main className="p-8">{children}</main>
+        <motion.main
+          key={router.pathname}
+          initial="pageInitial"
+          animate="pageAnimate"
+          variants={{
+            pageInitial: {
+              opacity: 0,
+            },
+            pageAnimate: {
+              opacity: 1,
+            },
+          }}
+          className="p-8"
+        >
+          {children}
+        </motion.main>
       </div>
 
       <footer>
@@ -81,6 +100,7 @@ const Layout = ({ children }) => {
         footer p {
           font-family: Helvetica;
           font-weight: 700;
+          color: #b9c8da;
         }
 
         footer a {
