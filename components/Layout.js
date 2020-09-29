@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="p-8">
+      <header className="static md:fixed top-0 p-8">
         <Link href="/">
           <div className="logo cursor-pointer">
             <h1 className="title font-bold">Andy</h1>
@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
       </header>
 
       <div className="body flex flex-1 flex-col md:flex-row">
-        <nav className="flex flex-row md:flex-col py-4 px-8 md:py-8">
+        <nav className="static md:fixed flex flex-row md:flex-col py-4 px-8 md:py-8 mt-0 md:mt-24">
           <Link href="/code">
             <a className="mr-4">
               <h3>code / design</h3>
@@ -46,13 +46,13 @@ const Layout = ({ children }) => {
               opacity: 1,
             },
           }}
-          className="p-8"
+          className="p-8 mt-0 md:mt-24 ml-0 md:ml-48"
         >
           {children}
         </motion.main>
       </div>
 
-      <footer>
+      <footer className="static md:fixed bottom-0">
         <a href="mailto:andyespagnolo@gmail.com">
           <p>andyespagnolo@gmail.com</p>
         </a>
