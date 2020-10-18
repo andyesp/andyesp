@@ -57,7 +57,8 @@ const Projects = [
     year: 2016,
     description: 'Design and development for visual artist website.',
     tech: 'HTML, CSS, Javascript, PHP (Wordpress).',
-    url: 'http://josediazramirez.com',
+    url: null,
+    releaseDate: 'Site no longer available.',
   },
 ]
 
