@@ -15,8 +15,7 @@ const Projects = [
     year: 2020,
     description: 'Design and development of website for one of the most important electronic music brands.',
     tech: 'NextJS, Wordpress.',
-    url: null,
-    releaseDate: 'Release in October 2020.',
+    url: 'https://djmagla.com',
   },
   {
     id: 5,
