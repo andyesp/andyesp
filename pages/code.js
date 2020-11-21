@@ -24,7 +24,7 @@ const Projects = [
     description: 'Website development for Buenos Aires based illustrator.',
     tech: 'NextJS.',
     url: null,
-    releaseDate: 'Release in October 2020.',
+    releaseDate: 'Release in 2021.',
   },
   {
     id: 4,
