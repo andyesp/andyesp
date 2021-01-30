@@ -7,24 +7,11 @@ import { Collectibles as CollectiblesData } from '~/lib/data'
 
 const Collectibles = () => (
   <>
-    <div className="grid">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {CollectiblesData.map((item) => (
         <CollectibleItem key={item.id} item={item} />
       ))}
     </div>
-    <style jsx>
-      {`
-        p {
-          max-width: 500px;
-          color: #b9c8da;
-          margin: 0 0 10px 0;
-        }
-
-        a {
-          color: #b9c8da;
-        }
-      `}
-    </style>
   </>
 )
 
