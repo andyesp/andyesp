@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
  */
 
 const MenuItemExternal = ({ href, text }) => (
-  <a href={href}>
+  <a href={href} className="mr-4">
     <h3 className="underline text-text">{text}</h3>
   </a>
 )
