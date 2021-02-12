@@ -1,6 +1,8 @@
-import Layout from '~/components/Layout'
-import '../styles/index.css'
 import { motion } from 'framer-motion'
+
+import Layout from '~/components/Layout'
+
+import '../styles/index.css'
 
 /**
  * App
