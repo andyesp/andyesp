@@ -61,7 +61,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'sort-imports': 'off',
-    'simple-import-sort/sort': [
+    'simple-import-sort/imports': [
       'error',
       {
         groups: [
