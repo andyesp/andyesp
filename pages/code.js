@@ -35,14 +35,13 @@ const Code = () => (
             {!isNil(item.year) ? ` (${item.year})` : null}
           </h3>
           <div className="md:ml-4 mb-2">
-            <p className="mb-2">{item.description}</p>
-            <p className="mb-2">{item.tech}</p>
+            {item.description && <p className="mb-2">{item.description}</p>}
+            {item.tech && <p className="mb-2">{item.tech}</p>}
             {!isEmpty(item.url) && (
               <a href={item.url} target="_blank" rel="noopener noreferrer">
                 <p className="mb-2 break-words underline">{item.url}</p>
               </a>
             )}
-            {!isEmpty(item.releaseDate) && <p className="mb-2">{item.releaseDate}</p>}
           </div>
         </div>
       </motion.div>
