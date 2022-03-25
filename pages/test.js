@@ -1,4 +1,5 @@
 import BoxWithScalingAnimatedBorders from '~/components/test/BoxWithScalingAnimatedBorders'
+import TextWithAnimatedBorder from '~/components/test/TextWithAnimatedBorder'
 
 /**
  * Test
@@ -6,7 +7,10 @@ import BoxWithScalingAnimatedBorders from '~/components/test/BoxWithScalingAnima
 
 const Test = () => (
   <div className="flex flex-col">
-    <BoxWithScalingAnimatedBorders />
+    <div className="mb-8">
+      <BoxWithScalingAnimatedBorders />
+    </div>
+    <TextWithAnimatedBorder />
   </div>
 )
 
