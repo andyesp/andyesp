@@ -8,9 +8,8 @@ const Home = () => (
   <>
     <p>
       I’m a{' '}
-      <Link href="/code" passHref>
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a className="underline">software developer</a>
+      <Link className="underline" href="/code">
+        software developer
       </Link>{' '}
       from Buenos Aires, Argentina.
     </p>

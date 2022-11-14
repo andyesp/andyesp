@@ -6,11 +6,9 @@ import PropTypes from 'prop-types'
  */
 
 const MenuItem = ({ href, text }) => (
-  <Link href={href} passHref>
+  <Link className="mr-4 text-white" href={href}>
     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-    <a className="mr-4 text-white">
-      <h3 className="underline text-text">{text}</h3>
-    </a>
+    <h3 className="underline text-text">{text}</h3>
   </Link>
 )
 
