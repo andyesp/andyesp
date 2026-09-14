@@ -1,3 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-accent-1: #333;
+  --color-text: #b9c8da;
+  --color-overlay: rgba(0, 0, 0, 0.3);
+}
