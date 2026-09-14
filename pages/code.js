@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { isEmpty, isNil, toNumber } from 'lodash'
 
 import { CodeProjects } from '~/lib/data'
