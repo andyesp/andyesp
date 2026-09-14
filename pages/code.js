@@ -1,5 +1,5 @@
-import { motion } from 'motion/react'
 import { isEmpty, isNil, toNumber } from 'lodash'
+import { motion } from 'motion/react'
 
 import { CodeProjects } from '~/lib/data'
 
