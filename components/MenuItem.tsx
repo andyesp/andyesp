@@ -1,24 +1,19 @@
 import Link from 'next/link'
-import PropTypes from 'prop-types'
 
 /**
  * MenuItem
  */
 
-const MenuItem = ({ href, text }) => (
+type MenuItemProps = {
+  href: string
+  text: string
+}
+
+const MenuItem = ({ href, text }: MenuItemProps) => (
   <Link className="mr-4 text-white" href={href}>
     <h3 className="underline text-text">{text}</h3>
   </Link>
 )
-
-/**
- * PropTypes
- */
-
-MenuItem.propTypes = {
-  href: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-}
 
 /**
  * Exports

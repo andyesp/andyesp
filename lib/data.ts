@@ -1,4 +1,13 @@
-export const CodeProjects = [
+export type CodeProject = {
+  id: number
+  title: string
+  year: string
+  description?: string
+  tech?: string
+  url?: string
+}
+
+export const CodeProjects: CodeProject[] = [
   {
     id: 10,
     title: 'Grateful',

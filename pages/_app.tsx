@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+import type { AppProps } from 'next/app'
 
 import Layout from '~/components/Layout'
 
@@ -8,7 +9,7 @@ import '../styles/index.css'
  * App
  */
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <motion.div
       initial="hidden"

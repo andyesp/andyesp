@@ -1,8 +1,8 @@
+import type { ReactNode } from 'react'
 import { motion } from 'motion/react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import PropTypes from 'prop-types'
 
 import Menu from '~/components/Menu'
 
@@ -10,7 +10,11 @@ import Menu from '~/components/Menu'
  * Layout
  */
 
-const Layout = ({ children }) => {
+type LayoutProps = {
+  children: ReactNode
+}
+
+const Layout = ({ children }: LayoutProps) => {
   const router = useRouter()
 
   return (
@@ -136,14 +140,6 @@ const Layout = ({ children }) => {
       </style>
     </div>
   )
-}
-
-/**
- * PropTypes
- */
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 /**

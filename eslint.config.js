@@ -1,4 +1,5 @@
 const js = require('@eslint/js')
+const tseslint = require('typescript-eslint')
 const globals = require('globals')
 const react = require('eslint-plugin-react')
 const reactHooks = require('eslint-plugin-react-hooks')
@@ -7,14 +8,18 @@ const importPlugin = require('eslint-plugin-import')
 const simpleImportSort = require('eslint-plugin-simple-import-sort')
 const prettierRecommended = require('eslint-plugin-prettier/recommended')
 
-module.exports = [
+module.exports = tseslint.config(
   {
-    ignores: ['.next/**', 'node_modules/**', 'public/**'],
+    ignores: ['.next/**', 'node_modules/**', 'public/**', 'next-env.d.ts'],
   },
   js.configs.recommended,
   react.configs.flat.recommended,
   react.configs.flat['jsx-runtime'],
   prettierRecommended,
+  {
+    files: ['**/*.ts', '**/*.tsx'],
+    extends: [tseslint.configs.recommended],
+  },
   {
     plugins: {
       import: importPlugin,
@@ -81,7 +86,7 @@ module.exports = [
             [`^(${require('module').builtinModules.join('|')})(/|$)`],
             // Packages. `react` related packages come first.
             ['^react', '^@?\\w'],
-            // Root imports with the `~/` alias (see jsconfig.json).
+            // Root imports with the `~/` alias (see tsconfig.json).
             // Parent imports. Put `..` last.
             // Other relative imports. Put same-folder imports and `.` last.
             ['^~/', '^\\.\\.(?!/?$)', '^\\.\\./?$', '^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
@@ -93,11 +98,11 @@ module.exports = [
     },
   },
   {
-    files: ['eslint.config.js', 'postcss.config.js', 'tailwind.config.js'],
+    files: ['eslint.config.js', 'postcss.config.js'],
     languageOptions: {
       globals: {
         ...globals.node,
       },
     },
-  },
-]
+  }
+)
